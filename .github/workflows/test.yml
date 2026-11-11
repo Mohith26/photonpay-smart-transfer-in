@@ -1,0 +1,16 @@
+name: test
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --test test/*.test.mjs
+      - name: results file is reproducible
+        run: |
+          cp data/results.json /tmp/committed.json
+          node scripts/build-results.mjs
+          node -e "const a=require('/tmp/committed.json'),b=require('./data/results.json');const k=a.defaultKey;if(JSON.stringify(a.scenarios[k].headline)!==JSON.stringify(b.scenarios[k].headline)){console.error('headline drift');process.exit(1)}"

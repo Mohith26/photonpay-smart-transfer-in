@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Issuing · Regular card · PhotonPay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Concept feature for PhotonPay Issuing: calibrated Smart transfer-in for Regular Cards that pay ad platforms." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ffcd29'/%3E%3Cpath d='M9 22c2-9 12-13 15-8-3-2-8 0-10 5' stroke='%23121212' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>window.__errors = []; addEventListener("error", (e) => __errors.push(String(e.message))); addEventListener("unhandledrejection", (e) => __errors.push(String(e.reason)));</script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="side" aria-label="PhotonPay navigation">
+      <div class="acct"><div class="av">N</div><div><b>Northwind Growth</b><span>2026 1029</span></div><i class="chev" data-lucide="chevrons-up-down"></i></div>
+      <nav class="nav">
+        <a href="#"><i data-lucide="house"></i>Home</a>
+        <a href="#"><i data-lucide="wallet"></i>Assets</a>
+        <a href="#"><i data-lucide="file-text"></i>Report</a>
+        <div class="lab">Product overview</div>
+        <a href="#"><i data-lucide="landmark"></i>Account</a>
+        <a href="#"><i data-lucide="arrow-left-right"></i>FX</a>
+        <a href="#"><i data-lucide="circle-dollar-sign"></i>CNY services</a>
+        <a href="#"><i data-lucide="hand-coins"></i>Payouts</a>
+        <a href="#"><i data-lucide="contact"></i>Contacts</a>
+        <a href="#/regular" class="on" aria-current="page"><i data-lucide="credit-card"></i>Issuing</a>
+        <a href="#"><i data-lucide="receipt"></i>Payments</a>
+        <a href="#"><i data-lucide="code-xml"></i>Developers</a>
+      </nav>
+      <div class="logo"><svg width="22" height="18" viewBox="0 0 22 18" aria-hidden="true"><path d="M2 14C4 4 15 0 19 6c-4-3-10-1-12 5" fill="none" stroke="#ffcd29" stroke-width="3.2" stroke-linecap="round"/><path d="M7 11c3 4 9 4 12 0" fill="none" stroke="#121212" stroke-width="2.2" stroke-linecap="round"/></svg>PHOTONPAY</div>
+    </aside>
+    <div class="main">
+      <header class="tabs" role="tablist" aria-label="Issuing">
+        <a href="#/share" role="tab">Share card</a>
+        <a href="#/regular" role="tab" data-route="regular">Regular card</a>
+        <a href="#" role="tab" class="hide-md">Card user</a>
+        <a href="#" role="tab">Transaction details</a>
+        <a href="#/smart" role="tab" data-route="smart">Smart transfer-in <span class="new">NEW</span></a>
+        <a href="#" role="tab">Settings</a>
+        <span class="sp"></span>
+        <button class="ic" aria-label="Search" id="searchIc"><i data-lucide="search"></i></button>
+        <button class="ic" aria-label="Notifications"><i data-lucide="bell"></i><span class="dot"></span></button>
+        <button class="ic" aria-label="Support"><i data-lucide="headset"></i></button>
+        <button class="ic" aria-label="Keyboard shortcuts" id="kbdBtn"><i data-lucide="settings"></i></button>
+      </header>
+      <div class="page" id="page"></div>
+    </div>
+  </div>
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Card details"></aside>
+  <div class="modal" id="batch" role="dialog" aria-modal="true" aria-labelledby="batchH"></div>
+  <div class="modal" id="keys" role="dialog" aria-modal="true" aria-labelledby="keysH"><div style="background:#fff;border-radius:12px;padding:22px;width:440px">
+    <h3 id="keysH" style="margin:0 0 14px">Keyboard shortcuts</h3>
+    <div class="keys"><kbd>/</kbd><span>Search cards</span><kbd>B</kbd><span>Batch transfer in (smart plan)</span><kbd>S</kbd><span>Smart transfer-in tab</span><kbd>R</kbd><span>Regular card tab</span><kbd>E</kbd><span>Export plan (CSV)</span><kbd>J</kbd><span>Export backtest (JSON)</span><kbd>Esc</kbd><span>Close</span><kbd>?</kbd><span>This list</span></div>
+    <div style="text-align:right;margin-top:18px"><button class="btn" data-close>Close</button></div></div></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

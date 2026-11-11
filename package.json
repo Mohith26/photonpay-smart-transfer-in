@@ -1,0 +1,8 @@
+{
+  "name": "photonpay-smart-transfer-in",
+  "private": true,
+  "type": "module",
+  "description": "Calibrated, billing-aware transfer-in planning for PhotonPay Regular Cards that pay ad platforms (concept feature)",
+  "scripts": { "test": "node --test test/*.test.mjs", "build:data": "node scripts/build-results.mjs" },
+  "license": "MIT"
+}
